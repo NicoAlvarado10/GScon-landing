@@ -1,0 +1,97 @@
+---
+import StoryCard from "../components/StoryCard.astro"
+---
+<section class="story" id="story">
+    <div class="story__texts">
+        <span class="story__subtitle">OUR FEATURES</span>
+        <h2 class="story__title">Compact and functional</h2>
+        <p class="story__paragraph">
+            Its sleek design fits comfortably in your hands, offering easy access to all controls, so you can game longer with precision and comfort.
+        </p>
+        <a class="story__btn" href="#">Explore more<i class="ri-arrow-right-up-line"></i></a>
+    </div>
+    <div class="story__grid">
+        <StoryCard
+            icon="ri-shapes-line"
+            title="Ergonomic Design"
+            paragraph="Designed to fit perfectly, ensures comfort during long gaming sessions"
+        />
+        <StoryCard
+            icon="ri-gamepad-line"
+            title="Precision Controls"
+            paragraph="Highly responsive buttons, offers accurate inputs for smooth gameplay"
+        />
+        <StoryCard
+            icon="ri-bluetooth-line"
+            title="Wireless Connectivity"
+            paragraph="Enjoy the freedom of wireless gaming with a strong, lag-free connection"
+        />
+        <StoryCard
+            icon="ri-radio-button-line"
+            title="Customizable Buttons"
+            paragraph="Tailor your gameplay by remapping buttons to suit your gaming style"
+        />
+    </div>
+</section>
+
+<style>
+    .story{
+        max-width: var(--max-width);
+        margin: 0 auto;
+        display: flex;
+        padding: 5rem 2rem;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+    
+    .story__subtitle{
+        font-size: 1.2rem;
+        color: var(--white);
+        margin-bottom: 1rem;
+    }
+    .story__title{
+        font-size: 3.5rem;
+        color: var(--white);
+        font-family: var(--header-font);
+        padding: 1rem 0;
+    }
+    .story__paragraph{
+        color: var(--text-light);
+        line-height: 1.5;
+        font-size: 1.1rem;
+        padding-bottom: 2rem;
+    }
+    .story__btn{
+        padding: 0.8rem 1.5rem;
+        color: var(--white);
+        transition: 0.3s;
+        border-radius: 2rem;
+        background-color: var(--primary-color-dark);
+    }
+    .story__btn:hover{
+        background-color: var(--primary-color);
+    }
+    .story__btn i{
+        font-size: 1.5rem;
+        margin-left: 0.5rem;
+    }
+    .story__grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+    }
+
+    @media (width < 768px ){
+        .story{
+            display: flex;
+            flex-direction: column;
+            padding: 5rem 1rem;
+        }
+    }
+    @media (width < 540px){
+     .story__grid{
+        display: flex;
+        flex-direction: column;
+     }   
+    }
+</style>

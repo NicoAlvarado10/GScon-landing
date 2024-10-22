@@ -1,0 +1,138 @@
+---
+
+---
+<nav class="nav">
+    <a class="nav__logo" href="#"><span>GS</span>con</a>
+    <ul class="nav__menu">
+        <li><a href="#home" class="nav__link">Home</a></li>
+        <li><a href="#story" class="nav__link">Story</a></li>
+        <li><a href="#product" class="nav__link">Product</a></li>
+        <li><a href="#news" class="nav__link">News</a></li>
+        <li><a class="nav__btn" href="#contact">Contact Us</a></li>
+    </ul>
+    <div class="menu-toggle">
+        <i class="ri-menu-fill"></i>
+    </div>
+</nav>
+
+<style>
+    .nav{
+        max-width: var(--max-width);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 2.5rem 0;
+        align-items: center;
+    }
+    .nav__logo{
+        color: var(--white);
+        transition: 0.3s;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    
+    .menu-toggle{
+        display: none;
+    }
+    .nav__menu{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    .nav__link{
+        color: var(--white);
+        font-family: var(--header-font);
+        transition: 0.3s;
+
+    }
+    .nav__link:hover{
+        color: var(--primary-color);
+    }
+    .nav__btn{
+        padding: 0.8rem 2rem;
+        color: var(--white);
+        transition: 0.3s;
+        border-radius: 2rem;
+        background-color: var(--primary-color-dark);
+    }
+    .nav__btn:hover{
+        background-color: var(--primary-color);
+    }
+
+    @media(width < 768px){
+        .nav{
+            background-color: var(--primary-color-dark);
+            padding: 1.5rem 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+        }
+        .nav__logo{
+            z-index: 2;
+            color: var(--text-dark);
+        }
+        .nav__menu {
+        display: none;
+        flex-direction: column;
+        
+    }
+    
+    .nav__menu.active {
+        display: flex;
+        position: absolute;
+        bottom: 0%;
+        left: 0;
+        background-color: var(--primary-color-dark);
+        padding-bottom: 2rem;
+        width: 100%;
+        transform: translateY(100%);
+        transition: 0.3s;
+        z-index: 1;
+    }
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--text-dark);
+        z-index: 2;
+    }
+    .nav__link{
+        color: var(--text-dark);
+    }
+    .nav__link:hover{
+        color: var(--text-dark);
+    }
+    .nav__btn{
+        background-color: var(--primary-color);
+        color: var(--text-dark);
+    }
+    }
+</style>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+   const navMenu = document.querySelector('.nav__menu');
+   
+   if (menuToggle && navMenu) {
+       const menuIcon = menuToggle.querySelector('i');
+   
+       if (menuIcon) {
+           menuToggle.addEventListener('click', () => {
+               navMenu.classList.toggle('active');
+               navMenu.classList.toggle('open');
+               const isOpen = navMenu.classList.contains('open');
+               menuIcon.setAttribute('class', isOpen ? 'ri-close-line' : 'ri-menu-line');
+           });
+   
+           document.addEventListener('click', (event) => {
+               const target = event.target as Node;
+               if (!navMenu.contains(target) && !menuToggle.contains(target)) {
+                   navMenu.classList.remove('active');
+                   navMenu.classList.remove('open');
+                   menuIcon.setAttribute('class', 'ri-menu-line');
+               }
+           });
+       }
+   }
+   
+   </script>

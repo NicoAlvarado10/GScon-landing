@@ -1,0 +1,131 @@
+---
+
+---
+<section class="feature" id="news">
+    <div class="feature__card">
+        <div class="div1"><h4>VR-Specific controllers</h4></div>
+        <div class="div2">
+            <a href="#">Explore more </a>
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+    </div>
+    <div class="feature__card--secondary">
+        <div class="div1"><h4>Participate in a big event</h4></div>
+        <div class="div2">
+            <a href="#">Explore more </a>
+            <i class="ri-arrow-right-up-line"></i> 
+        </div>
+    </div>
+</section>
+
+<style>
+.feature{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    padding: 5rem 2rem;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.feature__card,
+.feature__card--secondary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 3rem;
+    gap:8rem;
+    height: 350px;
+    border-radius: 1.5rem;
+}
+.feature__card{
+    background-image: url(../assets/banner-1.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.feature__card--secondary{
+    background-image: url(../assets/banner-2.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+
+.div1 { 
+    grid-area: 1 / 1 / 2 / 2;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.div2 {
+    grid-area: 2 / 2 / 3 / 3;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    transition: 0.3s;
+    border-radius: 2rem;
+    background-color: var(--white);
+    padding: 0.8rem 1rem;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.div2 a{
+    color: var(--text-dark);
+}
+.div2 i{
+    color: var(--text-dark);
+}
+
+@media (width < 1024px ){
+    .feature{
+            display: flex;
+            flex-direction: column;
+            padding: 5rem 1rem;
+            gap: 2rem;
+        }
+
+@media (width < 768px ){
+        .feature{
+            display: flex;
+            flex-direction: column;
+            padding: 5rem 1rem;
+            gap: 2rem;
+        }
+    }
+
+    @media (width < 540px){
+        .feature__card,
+.feature__card--secondary{
+    gap: 4rem;
+}
+    }
+</style>
+
+<script>
+        import ScrollReveal from 'scrollreveal';
+    const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".feature__card", {
+  ...scrollRevealOption,
+});
+
+ScrollReveal().reveal(".feature__card--secondary", {
+  ...scrollRevealOption,
+  delay:500
+});
+
+</script>

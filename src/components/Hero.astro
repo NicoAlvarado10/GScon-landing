@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets"
+import heroImg from "../assets/header.png"
+---
+<section class="hero" id="home">
+    <div class="hero__texts">
+        <h1 class="hero__title">Gaming Controller with VR</h1>
+        <p class="hero__paragraph">Immerse yourself in the future of gaming with our state-of-the-art gaming controller designed for Virtual Reality.</p>
+        <div class="hero__action">
+            <a class="hero__btn" href="#">Explore more</a>
+            <a class="hero__btn--secondary" href="#">Play video <i class="ri-play-circle-fill"></i></a>
+        </div>
+    </div>
+    <div>
+        <Image class="hero-img" src={heroImg} alt="hero-image"/>
+    </div>
+</section>
+
+<style>
+    .hero{
+        max-width: var(--max-width);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding-top: 2.5rem;
+        gap: 2rem;
+    }
+    .hero__title{
+        margin-bottom: 1rem;
+        font-size:5.5rem;
+        font-weight: 600;
+        font-family: var(--header-font);  
+        color: var(--white);
+    }
+    .hero__paragraph{
+        color: var(--text-light);
+        line-height: 1.5;
+        font-size: 1.1rem;
+        padding-bottom: 1rem;
+    }
+    .hero-img{
+        object-fit: cover;
+        width: 100%;
+        border-radius: 1rem;
+    }
+    .hero__action{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 1rem;
+    }
+    .hero__btn{
+        padding: 0.8rem 1.5rem;
+        color: var(--white);
+        transition: 0.3s;
+        border-radius: 2rem;
+        background-color: var(--primary-color-dark);
+    }
+    .hero__btn:hover{
+        background-color: var(--primary-color);
+    }
+    .hero__btn--secondary{
+        padding: 0.8rem 1.5rem;
+        border: 2px solid var(--white);
+        border-radius: 2rem;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .hero__btn--secondary i{
+        font-size: 2rem;
+    }
+
+
+    @media ( width < 768px ){
+        .hero{
+            display:flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .hero__action{
+            justify-content: center;
+        }
+        .hero__paragraph{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .hero-img{
+            border-radius: 0;
+        }
+    }
+    @media ( width < 540px ){
+        .hero__title{
+            padding-top: 4rem;
+        }
+    }
+</style>
+
+<script>
+        import ScrollReveal from 'scrollreveal';
+    const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".hero-img", {
+  ...scrollRevealOption,
+  origin: "right",
+});
+
+ScrollReveal().reveal(".hero__title", {
+  ...scrollRevealOption,
+  delay:500
+});
+
+ScrollReveal().reveal(".hero__paragraph", {
+  ...scrollRevealOption,
+  delay:1000
+});
+
+ScrollReveal().reveal(".hero__action", {
+  ...scrollRevealOption,
+  delay:1500
+});
+</script>

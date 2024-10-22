@@ -1,0 +1,59 @@
+---
+import 'remixicon/fonts/remixicon.css';
+import Header from "../sections/Header.astro"
+import Story from "../sections/Story.astro"
+import Feature from "../sections/Feature.astro"
+import Banner from "../sections/Banner.astro";
+import Product from "../sections/Product.astro";
+import Footer from "../sections/Footer.astro"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>GScon-Landing</title>
+	</head>
+	<body>
+		<Header/>
+    <main>
+      <Story/>
+      <Feature/>
+      <Banner/>
+      <Product/>
+    </main>
+    <Footer/>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+  --primary-color: #91e73c;
+  --primary-color-dark: #7ac232;
+  --text-dark: #000000;
+  --text-light: #9ca3af;
+  --extra-light: #f3f4f6;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "DM Sans", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--text-dark);
+}
+body, html{
+  scroll-behavior: smooth;
+}
+
+</style>

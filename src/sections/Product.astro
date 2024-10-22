@@ -1,0 +1,113 @@
+---
+import { Image } from "astro:assets"
+import imgProduct from "../assets/product.png"
+---
+<section class="product" id="product">
+    <h3 class="product__subtitle">OUR PRODUCTS</h3>
+    <h2 class="product__title">Elevate your gameplay with our cutting-edge controllers</h2>
+    <div class="product__container">
+        <div class="product__tipos">
+            <a href="#">Standard Controllers</a>
+            <a href="#">Pro Controllers</a>
+            <a href="#">VR-Specific Controllers</a>
+        </div>
+        <div class="product__texts">
+            <Image src={imgProduct} class="product-img" alt="product-image" />
+            <p>Experience gaming like never before with advanced features that put you in complete control.</p>
+            <a href="#">All Product <i class="ri-arrow-right-up-line"></i></a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .product{
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 5rem 1rem;
+        color: var(--white);
+    }
+    .product__subtitle{
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+    .product__title{
+        font-size: 3.5rem;
+        max-width: 800px;
+        margin-bottom: 3rem;
+        font-weight: 600;
+    }
+    .product__container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 3rem;
+
+    }
+    .product__tipos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .product-img{
+        width: 100%;
+        height: auto;
+        border-radius: 1.5rem;
+    }
+    .product__texts p{
+        color: var(--text-light);
+        font-size: 1.1rem;
+        padding: 1.5rem 0;
+        line-height: 1.5;
+    }
+    .product__texts a{
+        padding: 0.8rem 1.5rem;
+        color: var(--white);
+        transition: 0.3s;
+        border-radius: 2rem;
+        background-color: var(--primary-color-dark);
+    }
+    .product__texts a:hover{
+        background-color: var(--primary-color);
+    }
+    .product__tipos a{
+        background-color: var(--primary-color);
+        padding: 2rem;
+        border-radius: 2rem;
+        color: var(--text-dark);
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    .product__tipos a:hover{
+        background-color: var(--primary-color-dark);
+        color: var(--white);
+    }
+
+    @media (width < 768px ){
+        .product__container{
+            display: flex;
+            flex-direction: column;
+        }
+        .product__tipos{
+            gap: 2rem;
+        }
+        
+    }
+</style>
+
+<script>
+    import ScrollReveal from 'scrollreveal';
+    const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".product-img", {
+    duration:1000
+});
+
+ScrollReveal().reveal(".product__tipos ", {
+    ...scrollRevealOption,
+    delay:500
+});
+</script>
