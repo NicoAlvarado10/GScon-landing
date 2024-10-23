@@ -78,6 +78,10 @@ import heroImg from "../assets/header.png"
             display:flex;
             flex-direction: column;
             text-align: center;
+           
+        }
+        .hero__title{
+            padding-top: 4rem;
         }
         .hero__action{
             justify-content: center;
@@ -92,8 +96,23 @@ import heroImg from "../assets/header.png"
     }
     @media ( width < 540px ){
         .hero__title{
-            padding-top: 4rem;
+            font-size: 3rem;
         }
+        .hero-img{
+            width: 100%;
+        }
+        .hero__btn--secondary{
+        padding: 0.4rem 1rem;
+        border: 2px solid var(--white);
+        border-radius: 2rem;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .hero__action{
+        gap: 1rem;
+    }
     }
 </style>
 

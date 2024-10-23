@@ -87,7 +87,7 @@
 }
 
 @media (width < 1024px ){
-    .feature{
+    .feature, {
             display: flex;
             flex-direction: column;
             padding: 5rem 1rem;
@@ -101,6 +101,14 @@
             padding: 5rem 1rem;
             gap: 2rem;
         }
+        .feature__card, .feature__card--secondary{
+            display: flex;
+            flex-direction: column;
+        }
+        .div2{
+            width: 80%;
+            margin: 0 auto;
+        }
     }
 
     @media (width < 540px){
@@ -112,7 +120,7 @@
 </style>
 
 <script>
-        import ScrollReveal from 'scrollreveal';
+    import ScrollReveal from 'scrollreveal';
     const scrollRevealOption = {
   origin: "bottom",
   distance: "50px",
