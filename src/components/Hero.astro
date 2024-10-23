@@ -95,11 +95,16 @@ import heroImg from "../assets/header.png"
         }
     }
     @media ( width < 540px ){
+        .hero{
+            padding-bottom: 5rem;
+        }
         .hero__title{
             font-size: 3rem;
         }
         .hero-img{
-            width: 100%;
+            object-fit:none;
+        width: 100%;
+        
         }
         .hero__btn--secondary{
         padding: 0.4rem 1rem;
@@ -126,7 +131,6 @@ import heroImg from "../assets/header.png"
 
 ScrollReveal().reveal(".hero-img", {
   ...scrollRevealOption,
-  origin: "right",
 });
 
 ScrollReveal().reveal(".hero__title", {
